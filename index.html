@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>गणपती बाप्पा मोरया</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Opening Screen -->
+    <section class="opening-screen" id="openingScreen">
+        <div class="petals" aria-hidden="true">
+            <span>🌼</span>
+            <span>🌸</span>
+            <span>🌼</span>
+            <span>🌺</span>
+            <span>🌼</span>
+            <span>🌸</span>
+            <span>🌺</span>
+            <span>🌼</span>
+            <span>🌸</span>
+            <span>🌼</span>
+        </div>
+        <div class="diyas" aria-hidden="true">
+            <div class="diya diya-left">
+               
+                <div class="diya-body">🪔</div>
+            </div>
+        
+            <div class="diya diya-right">
+                
+                <div class="diya-body">🪔</div>
+            </div>
+        </div>
+        <div class="opening-content">
+            <img src="logo.png" alt="Tilak Maharashtra Vidyapeeth Logo" class="college-logo">
+            <p class="shlok opening-shlok">॥ श्री गणेशाय नमः ॥</p>
+
+            <div class="ganpati-container">
+                <div class="ganpati-glow"></div>
+                <img src="ganpati.png" alt="Ganpati Bappa" class="ganpati-image">
+            </div>
+
+            <h1 class="opening-title">गणपती बाप्पा मोरया!</h1>
+
+            <p class="welcome-text opening-message">
+                आपल्या आगमनाची आम्ही आतुरतेने वाट पाहत आहोत.
+            </p>
+
+            <button id="openInvitation" class="opening-button">
+                निमंत्रण उघडा
+            </button>
+
+            <audio id="ganpatiMusic" loop preload="auto">
+    <source src="ganpati-music.mp3" type="audio/mpeg">
+</audio>
+
+
+
+        </div>
+
+    </section>
+<button id="musicToggle" class="music-toggle" aria-label="Music On/Off">
+    ♪
+</button>
+
+    <!-- Main invitation -->
+    <main id="mainInvitation" class="hidden">
+
+        <div class="floating-decorations" aria-hidden="true">
+    <span>✦</span>
+    <span>🌸</span>
+    <span>✦</span>
+    <span>🌼</span>
+    <span>✦</span>
+    <span>🌸</span>
+</div>
+        <section class="hero">
+
+            <div class="hero-decoration">
+                ॐ
+            </div>
+        
+            <p class="shlok">॥ श्री गणेशाय नमः ॥</p>
+        
+            <div class="hero-ganpati">
+                <img src="ganpati.png" alt="श्री गणपती बाप्पा">
+            </div>
+        
+           <p class="hero-small-text">
+    Tilak Maharashtra Vidyapeeth, Kharghar
+</p>
+
+<h1>श्री गणपती बाप्पांचे मंगल आगमन</h1>
+
+<p class="hero-welcome">
+    आपल्या महाविद्यालयात होत आहे
+</p>
+        
+            <div class="hero-divider">
+                ❈
+            </div>
+        
+            <p class="hero-family">
+    या मंगलमय सोहळ्यास आपण सर्वांनी उपस्थित राहून
+    गणरायांच्या आगमनाची शोभा वाढवावी.
+</p>
+        
+        </section>
+
+
+        <section class="invitation">
+
+    <div class="invitation-card">
+
+        <div class="card-top-decoration">
+            ❈
+        </div>
+
+        <p class="card-shlok">
+            ॥ श्री गणेशाय नमः ॥
+        </p>
+
+        <h2>सस्नेह निमंत्रण</h2>
+
+        <div class="college-name">
+            Tilak Maharashtra Vidyapeeth
+            <br>
+            Kharghar
+        </div>
+
+        <div class="card-divider">
+            ───── ✦ ─────
+        </div>
+
+        <p class="invitation-message">
+            श्री गणरायांच्या मंगलमय आगमनानिमित्त
+            आयोजित करण्यात आलेल्या
+            गणेशोत्सव सोहळ्यास
+            आपण सर्वांनी उपस्थित राहून
+            या उत्सवाची शोभा वाढवावी,
+            ही नम्र विनंती.
+        </p>
+
+        <p class="invitation-ending">
+            विद्यार्थी, शिक्षक व कर्मचारीवर्गाने
+            या मंगलमय सोहळ्यात
+            उत्साहाने सहभागी व्हावे.
+        </p>
+
+        <div class="card-bottom-decoration">
+            ❈
+        </div>
+
+    </div>
+
+</section>
+
+
+        <section class="details">
+
+    <div class="details-heading">
+
+        <p class="section-shlok">
+            ॥ मंगलमूर्ती मोरया ॥
+        </p>
+
+        <h2>गणेशोत्सव कार्यक्रम</h2>
+
+        <p>
+            श्री गणरायांच्या उत्सवातील
+            विविध मंगलमय कार्यक्रम
+        </p>
+
+    </div>
+
+
+    <div class="event-list program-timeline">
+
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🪔
+            </div>
+
+            <div class="event-content">
+
+                <h3>गणपती स्थापना</h3>
+
+<p class="event-date" id="eventDate1">
+    दिनांक लवकरच जाहीर
+</p>
+
+<p class="event-time" id="eventTime1">
+    वेळ लवकरच जाहीर करण्यात येईल
+</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🙏
+            </div>
+
+            <div class="event-content">
+
+                <h3>महाआरती</h3>
+
+                <p class="event-date" id="eventDate2">
+    दिनांक लवकरच जाहीर
+</p>
+
+<p class="event-time" id="eventTime2">
+    वेळ लवकरच जाहीर करण्यात येईल
+</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🎭
+            </div>
+
+            <div class="event-content">
+
+                <h3>सांस्कृतिक कार्यक्रम</h3>
+
+                <p class="event-date" id="eventDate3">
+    दिनांक लवकरच जाहीर
+</p>
+
+<p class="event-time" id="eventTime3">
+    वेळ लवकरच जाहीर करण्यात येईल
+</p>
+
+            </div>
+
+        </div>
+
+
+        
+
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🌺
+            </div>
+
+            <div class="event-content">
+
+                <h3>गणपती विसर्जन</h3>
+
+               <p class="event-date" id="eventDate5">
+    दिनांक लवकरच जाहीर
+</p>
+
+<p class="event-time" id="eventTime5">
+    वेळ लवकरच जाहीर करण्यात येईल
+</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- College Events Section -->
+
+<section class="college-events">
+
+    <div class="college-events-heading">
+
+        <p class="section-shlok">
+            ॥ गणपती बाप्पा मोरया ॥
+        </p>
+
+        <h2>उत्सवातील खास आकर्षणे</h2>
+
+        <p>
+            गणेशोत्सवाच्या निमित्ताने आयोजित
+            विविध कार्यक्रमांमध्ये सहभागी व्हा.
+        </p>
+
+    </div>
+
+
+    <div class="event-showcase">
+
+        <div class="showcase-card">
+
+            <div class="showcase-icon">
+                🎭
+            </div>
+
+            <h3>सांस्कृतिक कार्यक्रम</h3>
+
+            <p>
+                कला, संगीत, नृत्य आणि
+                विविध सांस्कृतिक कार्यक्रम.
+            </p>
+
+        </div>
+
+
+        <div class="showcase-card">
+
+            <div class="showcase-icon">
+                🏆
+            </div>
+
+            <h3>स्पर्धा</h3>
+
+            <p>
+                विद्यार्थ्यांसाठी विविध
+                मनोरंजक आणि सर्जनशील स्पर्धा.
+            </p>
+
+        </div>
+
+
+        <div class="showcase-card">
+
+            <div class="showcase-icon">
+                🎤
+            </div>
+
+            <h3>मनोरंजन</h3>
+
+            <p>
+                उत्साह, मनोरंजन आणि
+                विद्यार्थ्यांच्या कलागुणांना वाव.
+            </p>
+
+        </div>
+
+
+        <div class="showcase-card">
+
+            <div class="showcase-icon">
+                📸
+            </div>
+
+            <h3>गणेशोत्सव क्षण</h3>
+
+            <p>
+                आपल्या उत्सवातील खास
+                आठवणी आणि सुंदर क्षण.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     LOCATION SECTION
+========================= -->
+
+<section class="location">
+
+    <div class="location-heading">
+
+        <p class="section-shlok">
+            ॥ मंगलमूर्ती मोरया ॥
+        </p>
+
+        <h2>गणेशोत्सवाचे ठिकाण</h2>
+
+        <p>
+            आपण सर्वांचे मनःपूर्वक स्वागत आहे.
+        </p>
+
+    </div>
+
+
+    <div class="location-card">
+
+        <div class="location-icon">
+            📍
+        </div>
+
+        <h3>
+            Tilak Maharashtra Vidyapeeth
+        </h3>
+
+        <p class="location-address">
+            Plot No. 3, Sector 14,<br>
+            Near Raghunath Vihar,<br>
+            Kharghar, Navi Mumbai
+        </p>
+
+        <a
+            href="https://maps.app.goo.gl/c9JLwYoAwZufk2pz7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="maps-button"
+        >
+            📍 Google Maps वर ठिकाण पहा
+        </a>
+
+    </div>
+
+</section>
+
+       <section class="footer">
+
+    <div class="footer-decoration">
+        ॥ ॐ गं गणपतये नमः ॥
+    </div>
+
+    <h2>गणपती बाप्पा मोरया! 🙏</h2>
+
+    <p>
+        Tilak Maharashtra Vidyapeeth, Kharghar
+    </p>
+
+    <p class="footer-message">
+        श्री गणरायांचा आशीर्वाद
+        आपल्या सर्वांवर सदैव राहो.
+    </p>
+
+    <button id="shareButton" class="share-button">
+    📤 हे निमंत्रण शेअर करा
+</button>
+
+    <div class="footer-decoration">
+   🔱 एकता • संस्कृती • उत्सव • गणराया  🔱
+    </div>
+
+</section>
+
+    </main>
+
+    <!-- Back To Top Button -->
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+    ↑
+</button>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
