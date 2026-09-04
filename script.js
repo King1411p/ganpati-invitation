@@ -1,20 +1,18 @@
 const openButton = document.getElementById("openInvitation");
-
 const ganpatiMusic = document.getElementById("ganpatiMusic");
 const musicToggle = document.getElementById("musicToggle");
 
 const openingScreen = document.getElementById("openingScreen");
-
 const mainInvitation = document.getElementById("mainInvitation");
 
 
 openButton.addEventListener("click", () => {
 
-ganpatiMusic.play().catch(() => {
-    console.log("Music could not start.");
-});
+    ganpatiMusic.play().catch(() => {
+        console.log("Music could not start.");
+    });
 
-musicToggle.style.display = "block";
+    musicToggle.style.display = "block";
 
     openingScreen.classList.add("closing");
 
@@ -29,6 +27,7 @@ musicToggle.style.display = "block";
     }, 900);
 
 });
+
 
 // =========================
 // SCROLL REVEAL
@@ -213,3 +212,153 @@ musicToggle.addEventListener("click", () => {
     }
 
 });
+
+/* =========================
+   SWIPE NAVIGATION
+========================= */
+
+const swipeContainer = document.querySelector(".swipe-container");
+const swipePages = document.querySelectorAll(".swipe-container > section");
+const swipeDots = document.querySelectorAll(".swipe-dots span");
+
+let currentPage = 0;
+let startX = 0;
+let startY = 0;
+let isDragging = false;
+
+
+/* =========================
+   DOTS
+========================= */
+
+function updateDots() {
+
+    swipeDots.forEach((dot, index) => {
+
+        dot.classList.toggle(
+            "active",
+            index === currentPage
+        );
+
+    });
+
+}
+
+
+/* =========================
+   GO TO PAGE
+========================= */
+
+function goToPage(pageIndex) {
+
+    if (!swipeContainer) return;
+
+    if (pageIndex < 0 || pageIndex >= swipePages.length) {
+        return;
+    }
+
+    currentPage = pageIndex;
+
+    swipeContainer.scrollTo({
+        left: currentPage * swipeContainer.clientWidth,
+        behavior: "smooth"
+    });
+
+    updateDots();
+
+}
+
+
+/* =========================
+   MOUSE SWIPE
+========================= */
+
+mainInvitation?.addEventListener("mousedown", (event) => {
+
+    startX = event.clientX;
+    startY = event.clientY;
+    isDragging = true;
+
+});
+
+
+mainInvitation?.addEventListener("mouseup", (event) => {
+
+    if (!isDragging) return;
+
+    const endX = event.clientX;
+    const endY = event.clientY;
+
+    const distanceX = endX - startX;
+    const distanceY = endY - startY;
+
+    isDragging = false;
+
+    /* Ignore vertical movement */
+    if (Math.abs(distanceX) <= Math.abs(distanceY)) {
+        return;
+    }
+
+    /* SWIPE LEFT → PREVIOUS PAGE */
+    if (distanceX < -60) {
+        goToPage(currentPage - 1);
+    }
+
+    /* SWIPE RIGHT → NEXT PAGE */
+    if (distanceX > 60) {
+        goToPage(currentPage + 1);
+    }
+
+});
+
+
+mainInvitation?.addEventListener("mouseleave", () => {
+
+    isDragging = false;
+
+});
+
+
+/* =========================
+   TOUCH SWIPE
+========================= */
+
+mainInvitation?.addEventListener("touchstart", (event) => {
+
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+
+}, { passive: true });
+
+
+mainInvitation?.addEventListener("touchend", (event) => {
+
+    const endX = event.changedTouches[0].clientX;
+    const endY = event.changedTouches[0].clientY;
+
+    const distanceX = endX - startX;
+    const distanceY = endY - startY;
+
+    /* Ignore vertical movement */
+    if (Math.abs(distanceX) <= Math.abs(distanceY)) {
+        return;
+    }
+
+    /* SWIPE LEFT → PREVIOUS PAGE */
+    if (distanceX < -60) {
+        goToPage(currentPage - 1);
+    }
+
+    /* SWIPE RIGHT → NEXT PAGE */
+    if (distanceX > 60) {
+        goToPage(currentPage + 1);
+    }
+
+});
+
+
+/* =========================
+   INITIAL DOT STATE
+========================= */
+
+updateDots();
