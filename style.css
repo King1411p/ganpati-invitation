@@ -2277,6 +2277,10 @@ padding: 0;
     pointer-events: none;
     z-index: 1;
 }
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
 
 /* =========================
    MOBILE HERO FIT
@@ -2344,62 +2348,71 @@ padding: 0;
 }
 @media (max-width: 600px) {
 
-    .hero {
-        height: 100svh !important;
-        min-height: 0 !important;
-        padding: 12px 14px !important;
-        box-sizing: border-box;
-        justify-content: center;
-    }
+.hero {
+    height: 100svh !important;
+    min-height: 0 !important;
+    box-sizing: border-box;
+
+    padding: 35px 14px 85px !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
     .hero-decoration {
-        font-size: 18px !important;
+        font-size: 35px !important;
         margin: 0 0 2px !important;
     }
 
     .hero .shlok {
-        font-size: 11px !important;
-        margin: 2px 0 5px !important;
-    }
+    font-size: 19px !important;
+    margin: 2px 0 5px !important;
+    font-weight: 500 !important;
+}
 
     .hero-ganpati {
-        margin: 0 auto 4px !important;
-    }
+    width: 160px !important;
+    height: 160px !important;
+    margin: 0 auto 4px !important;
+}
 
     .hero-ganpati img {
-        width: 120px !important;
-        max-height: 125px !important;
+        width: 145px !important;
+        max-height: 150px !important;
     }
 
     .hero-small-text {
-        font-size: 11px !important;
+        font-size: 18px !important;
         line-height: 1.2 !important;
         margin: 3px 0 !important;
     }
 
     .hero h1 {
-        font-size: 22px !important;
+        font-size: 25px !important;
         line-height: 1.18 !important;
         margin: 3px 0 5px !important;
     }
 
     .hero-welcome {
-        font-size: 14px !important;
-        line-height: 1.25 !important;
-        margin: 3px 0 5px !important;
-    }
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+    margin: 3px 0 5px !important;
+    font-weight: 500 !important;
+}
 
     .hero-divider {
-        font-size: 17px !important;
+        font-size: 20px !important;
         margin: 2px 0 5px !important;
     }
-
-    .hero-family {
-        font-size: 11px !important;
-        line-height: 1.35 !important;
-        max-width: 280px !important;
-        margin: 0 auto !important;
-    }
+.hero-family {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+    max-width: 310px !important;
+    margin: 0 auto !important;
+    font-weight: 500 !important;
+}
 }
 
 
@@ -2455,7 +2468,7 @@ padding: 0;
 
 .next-page-hint {
     position: absolute;
-    bottom: 45px;
+    bottom: 55px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -2479,3 +2492,299 @@ padding: 0;
         opacity: 1;
     }
 }
+
+/* =========================
+   LANGUAGE SELECTION POPUP
+========================= */
+
+.language-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(60, 25, 10, 0.45);
+    backdrop-filter: blur(6px);
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.language-popup-card {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 35px 25px;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8ed 0%,
+            #f9dfb5 70%,
+            #f1c98f 100%
+        );
+
+    border: 2px solid #c47732;
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(70, 30, 10, 0.25);
+
+    animation: languagePopupAppear 0.5s ease forwards;
+}
+
+.language-shlok {
+    margin: 0 0 12px;
+    color: #9b3d16;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.language-popup-card h2 {
+    margin: 0 0 5px;
+    color: #7d2d18;
+    font-size: 24px;
+}
+
+.language-popup-card > p:not(.language-shlok) {
+    margin: 0 0 25px;
+    color: #9b3d16;
+    font-size: 14px;
+}
+
+.language-options {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.language-option {
+    flex: 1;
+    padding: 12px 10px;
+
+    border: 1px solid #b94b19;
+    border-radius: 10px;
+
+    background: #fff4dc;
+    color: #7d2d18;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.language-option:hover {
+    background: #b94b19;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@keyframes languagePopupAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.language-popup.hidden {
+    display: none !important;
+}
+
+/* =========================
+   PAGE 2 — FLYER STYLE
+   MOBILE FIT
+========================= */
+
+@media (max-width: 600px) {
+
+    .invitation {
+        height: 100svh !important;
+        min-height: 0 !important;
+        box-sizing: border-box;
+        padding: 25px 14px 75px !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow-y: auto;
+    }
+
+    .invitation-card {
+        width: 100%;
+        max-width: 390px;
+        box-sizing: border-box;
+
+        padding: 24px 22px !important;
+        margin: 0 auto;
+
+        border-radius: 18px;
+    }
+
+    .card-top-decoration {
+        font-size: 24px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .card-shlok {
+        font-size: 14px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .invitation-card h2 {
+        font-size: 30px !important;
+        line-height: 1.2 !important;
+        margin: 0 0 22px !important;
+    }
+
+    .college-name {
+        font-size: 22px !important;
+        line-height: 1.45 !important;
+        margin-bottom: 18px !important;
+    }
+
+    .card-divider {
+        margin: 8px 0 22px !important;
+    }
+
+    .invitation-message {
+        font-size: 16px !important;
+        line-height: 1.65 !important;
+        margin: 0 auto 18px !important;
+    }
+
+    .invitation-ending {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+        margin: 0 auto !important;
+    }
+
+    .card-bottom-decoration {
+        font-size: 22px !important;
+        margin-top: 18px !important;
+    }
+}
+/* =========================
+   PAGE 2 — FINAL MOBILE FIT
+========================= */
+
+@media (max-width: 600px) {
+
+    .invitation {
+        height: 100svh !important;
+        min-height: 100svh !important;
+        padding: 12px 12px 60px !important;
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+    }
+
+    .invitation-card {
+        width: 100% !important;
+        max-width: 390px !important;
+
+        height: 100% !important;
+        max-height: 100% !important;
+
+        box-sizing: border-box !important;
+
+        margin: 0 !important;
+        padding: 18px 18px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+
+        overflow-y: auto !important;
+    }
+
+    .card-top-decoration {
+        flex-shrink: 0;
+        margin: 0 0 5px !important;
+    }
+
+    .card-shlok {
+        flex-shrink: 0;
+        margin: 0 0 5px !important;
+    }
+
+    .invitation-card h2 {
+        flex-shrink: 0;
+        margin: 0 0 8px !important;
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+    }
+
+    .college-name {
+        flex-shrink: 0;
+        margin: 0 0 8px !important;
+        font-size: 20px !important;
+        line-height: 1.3 !important;
+    }
+
+    .card-divider {
+        flex-shrink: 0;
+        margin: 4px 0 8px !important;
+    }
+
+    .invitation-message {
+        flex-shrink: 0;
+        margin: 0 auto 8px !important;
+        font-size: 15px !important;
+        line-height: 1.45 !important;
+    }
+
+    .invitation-ending {
+        flex-shrink: 0;
+        margin: 0 auto !important;
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+    }
+
+    .card-bottom-decoration {
+        flex-shrink: 0;
+        margin: 6px 0 0 !important;
+    }
+}
+
+/* =========================
+   PAGE 2 — DIVIDER FIX
+========================= */
+
+@media (max-width: 600px) {
+
+    .invitation .card-divider {
+        width: 100% !important;
+        max-width: 300px !important;
+
+        margin: 8px auto 18px !important;
+
+        font-size: 14px !important;
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+        overflow: hidden !important;
+
+        letter-spacing: 0 !important;
+        text-align: center !important;
+    }
+
+}
+
+
+

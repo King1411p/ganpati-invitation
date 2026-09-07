@@ -1,3 +1,309 @@
+/* =========================
+   LANGUAGE SELECTION
+========================= */
+
+const languagePopup = document.getElementById("languagePopup");
+const selectMarathi = document.getElementById("selectMarathi");
+const selectEnglish = document.getElementById("selectEnglish");
+
+let selectedLanguage = "mr";
+
+selectMarathi.addEventListener("click", () => {
+
+    selectedLanguage = "mr";
+
+    languagePopup.classList.add("hidden");
+
+});
+
+selectEnglish.addEventListener("click", () => {
+
+    selectedLanguage = "en";
+
+    applyEnglishLanguage();
+
+    languagePopup.classList.add("hidden");
+
+});
+
+/* =========================
+   ENGLISH TRANSLATIONS
+========================= */
+
+const englishTranslations = {
+
+    opening: {
+        shlok: "॥ श्री गणेशाय नमः ॥",
+        title: "Ganpati Bappa Morya!",
+        message: "We eagerly await your arrival.",
+        button: "Open Invitation"
+    },
+
+    hero: {
+        decoration: "ॐ",
+        shlok: "॥ श्री गणेशाय नमः ॥",
+        college: "Tilak Maharashtra Vidyapeeth, Kharghar",
+        title: "Auspicious Arrival of Lord Ganesha",
+        welcome: "Celebrating Ganeshotsav at our college",
+        message: "We warmly invite you to join us and grace the auspicious arrival of Lord Ganesha.",
+        next: "Swipe →"
+    },
+
+    invitation: {
+        shlok: "॥ श्री गणेशाय नमः ॥",
+        title: "A Cordial Invitation",
+        college: "Tilak Maharashtra Vidyapeeth",
+        location: "Kharghar",
+        message: "On the auspicious occasion of the arrival of Lord Ganesha, we cordially invite you to join us for the Ganeshotsav celebration and grace the festivities with your presence.",
+        ending: "Students, teachers and staff are warmly invited to participate enthusiastically in this auspicious celebration."
+    },
+
+    details: {
+    shlok: "॥ मंगलमूर्ती मोरया ॥",
+    title: "Ganeshotsav Programme",
+    subtitle: "A variety of auspicious programmes celebrating Lord Ganesha",
+
+    event1: "Ganpati Aagman",
+    event2: "Ganesh Sthapana & Aarti",
+    event3: "Maha Aarti",
+    event4: "Cultural Programme",
+    event5: "Ganpati Visarjan",
+
+    event1Date: "Saturday, 12 September 2026",
+    event1Time: "1:30 PM",
+
+    event2Date: "Monday, 14 September 2026",
+    event2Time: "Morning Aarti: 10:00 AM – 11:30 AM<br>Evening Aarti: 7:00 PM",
+
+    event3Date: "Tuesday, 15 September 2026",
+    event3Time: "Morning Aarti: 10:30 AM<br>Aarti before Visarjan: 1:30 PM",
+
+    event4Date: "Tuesday, 15 September 2026",
+    event4Time: "After Morning Aarti",
+
+    event5Date: "Tuesday, 15 September 2026",
+    event5Time: "2:00 PM onwards"
+},
+
+    attractions: {
+        shlok: "॥ गणपती बाप्पा मोरया ॥",
+        title: "Special Attractions",
+        subtitle: "Join us in the various programmes organized during Ganeshotsav.",
+
+        event1: "Cultural Programme",
+        event1Text: "Art, music, dance and various cultural performances.",
+
+        event2: "Competitions",
+        event2Text: "Fun and creative competitions for students.",
+
+        event3: "Entertainment",
+        event3Text: "Excitement, entertainment and a platform for students to showcase their talents.",
+
+        event4: "Ganeshotsav Moments",
+        event4Text: "Special memories and beautiful moments from our celebration."
+    },
+
+    location: {
+        shlok: "॥ मंगलमूर्ती मोरया ॥",
+        title: "Ganeshotsav Venue",
+        subtitle: "We warmly welcome you all.",
+
+        college: "Tilak Maharashtra Vidyapeeth",
+        mapsButton: "📍 View Location on Google Maps",
+
+        footerMantra: "॥ ॐ गं गणपतये नमः ॥",
+        footerTitle: "Ganpati Bappa Morya! 🙏",
+        footerCollege: "Tilak Maharashtra Vidyapeeth, Kharghar",
+        footerMessage: "May the blessings of Lord Ganesha always be with us all.",
+        share: "📤 Share this invitation",
+        footerBottom: "🔱 Unity • Culture • Celebration • Ganraya 🔱"
+    }
+
+};
+
+
+/* =========================
+   APPLY ENGLISH LANGUAGE
+========================= */
+
+function applyEnglishLanguage() {
+
+    // Opening screen
+    document.querySelector(".opening-shlok").textContent =
+        englishTranslations.opening.shlok;
+
+    document.querySelector(".opening-title").textContent =
+        englishTranslations.opening.title;
+
+    document.querySelector(".opening-message").textContent =
+        englishTranslations.opening.message;
+
+    document.querySelector("#openInvitation").textContent =
+        englishTranslations.opening.button;
+
+
+    // Hero page
+    document.querySelector(".hero-decoration").textContent =
+        englishTranslations.hero.decoration;
+
+    document.querySelector(".hero .shlok").textContent =
+        englishTranslations.hero.shlok;
+
+    document.querySelector(".hero-small-text").textContent =
+        englishTranslations.hero.college;
+
+    document.querySelector(".hero h1").textContent =
+        englishTranslations.hero.title;
+
+    document.querySelector(".hero-welcome").textContent =
+        englishTranslations.hero.welcome;
+
+    document.querySelector(".hero-family").textContent =
+        englishTranslations.hero.message;
+
+    document.querySelector(".next-page-hint").textContent =
+        englishTranslations.hero.next;
+
+
+    // Invitation page
+    document.querySelector(".card-shlok").textContent =
+        englishTranslations.invitation.shlok;
+
+    document.querySelector(".invitation h2").textContent =
+        englishTranslations.invitation.title;
+
+    document.querySelector(".college-name").innerHTML =
+        englishTranslations.invitation.college +
+        "<br>" +
+        englishTranslations.invitation.location;
+
+    document.querySelector(".invitation-message").textContent =
+        englishTranslations.invitation.message;
+
+    document.querySelector(".invitation-ending").textContent =
+        englishTranslations.invitation.ending;
+
+
+    // Programme page
+    document.querySelector(".details .section-shlok").textContent =
+        englishTranslations.details.shlok;
+
+    document.querySelector(".details h2").textContent =
+        englishTranslations.details.title;
+
+    document.querySelector(".details-heading > p:not(.section-shlok)").textContent =
+    englishTranslations.details.subtitle;
+
+    const eventCards = document.querySelectorAll(".details .event-card");
+
+if (eventCards.length >= 5) {
+    eventCards[0].querySelector("h3").textContent = englishTranslations.details.event1;
+    eventCards[1].querySelector("h3").textContent = englishTranslations.details.event2;
+    eventCards[2].querySelector("h3").textContent = englishTranslations.details.event3;
+    eventCards[3].querySelector("h3").textContent = englishTranslations.details.event4;
+    eventCards[4].querySelector("h3").textContent = englishTranslations.details.event5;
+}
+
+document.querySelector("#eventDate1").textContent = englishTranslations.details.event1Date;
+document.querySelector("#eventTime1").innerHTML = englishTranslations.details.event1Time;
+
+document.querySelector("#eventDate2").textContent = englishTranslations.details.event2Date;
+document.querySelector("#eventTime2").innerHTML = englishTranslations.details.event2Time;
+
+document.querySelector("#eventDate3").textContent = englishTranslations.details.event3Date;
+document.querySelector("#eventTime3").innerHTML = englishTranslations.details.event3Time;
+
+document.querySelector("#eventDate4").textContent = englishTranslations.details.event4Date;
+document.querySelector("#eventTime4").innerHTML = englishTranslations.details.event4Time;
+
+document.querySelector("#eventDate5").textContent = englishTranslations.details.event5Date;
+document.querySelector("#eventTime5").innerHTML = englishTranslations.details.event5Time;
+
+
+    // Special attractions page
+    document.querySelector(".college-events .section-shlok").textContent =
+        englishTranslations.attractions.shlok;
+
+    document.querySelector(".college-events h2").textContent =
+        englishTranslations.attractions.title;
+
+    document.querySelector(".college-events-heading > p:not(.section-shlok)").textContent =
+    englishTranslations.attractions.subtitle;
+
+
+    // Attraction cards
+    const attractionCards =
+        document.querySelectorAll(".college-events .showcase-card");
+
+    if (attractionCards.length >= 4) {
+
+        attractionCards[0].querySelector("h3").textContent =
+            englishTranslations.attractions.event1;
+
+        attractionCards[0].querySelector("p").textContent =
+            englishTranslations.attractions.event1Text;
+
+
+        attractionCards[1].querySelector("h3").textContent =
+            englishTranslations.attractions.event2;
+
+        attractionCards[1].querySelector("p").textContent =
+            englishTranslations.attractions.event2Text;
+
+
+        attractionCards[2].querySelector("h3").textContent =
+            englishTranslations.attractions.event3;
+
+        attractionCards[2].querySelector("p").textContent =
+            englishTranslations.attractions.event3Text;
+
+
+        attractionCards[3].querySelector("h3").textContent =
+            englishTranslations.attractions.event4;
+
+        attractionCards[3].querySelector("p").textContent =
+            englishTranslations.attractions.event4Text;
+    }
+
+
+    // Location + Footer
+    document.querySelector(".location .section-shlok").textContent =
+        englishTranslations.location.shlok;
+
+    document.querySelector(".location-heading h2").textContent =
+        englishTranslations.location.title;
+
+    document.querySelector(".location-heading > p:last-child").textContent =
+        englishTranslations.location.subtitle;
+
+    document.querySelector(".location-card h3").textContent =
+        englishTranslations.location.college;
+
+    document.querySelector(".maps-button").textContent =
+        englishTranslations.location.mapsButton;
+
+    document.querySelector(".footer-decoration").textContent =
+        englishTranslations.location.footerMantra;
+
+    document.querySelector(".footer h2").textContent =
+        englishTranslations.location.footerTitle;
+
+    document.querySelector(".footer > p").textContent =
+        englishTranslations.location.footerCollege;
+
+    document.querySelector(".footer-message").textContent =
+        englishTranslations.location.footerMessage;
+
+    document.querySelector("#shareButton").textContent =
+        englishTranslations.location.share;
+
+    document.querySelector(".footer-decoration:last-child").textContent =
+        englishTranslations.location.footerBottom;
+}
+
+
+
+
 const openButton = document.getElementById("openInvitation");
 const ganpatiMusic = document.getElementById("ganpatiMusic");
 const musicToggle = document.getElementById("musicToggle");
@@ -101,30 +407,27 @@ backToTop.addEventListener("click", () => {
 // =========================
 
 const eventDetails = {
-
     event1: {
-        date: "दिनांक लवकरच जाहीर",
-        time: "वेळ लवकरच जाहीर करण्यात येईल"
+        date: "शनिवार, १२ सप्टेंबर २०२६",
+        time: "दुपारी १:३० वाजता"
     },
-
     event2: {
-        date: "दिनांक लवकरच जाहीर",
-        time: "वेळ लवकरच जाहीर करण्यात येईल"
+        date: "सोमवार, १४ सप्टेंबर २०२६",
+        time: "सकाळची आरती: १०:०० – ११:३० सायंकाळची आरती: ७:०० वाजता"
     },
-
     event3: {
-        date: "दिनांक लवकरच जाहीर",
-        time: "वेळ लवकरच जाहीर करण्यात येईल"
+        date: "मंगळवार, १५ सप्टेंबर २०२६",
+        time: "सकाळची आरती: १०:३० वाजता विसर्जनापूर्वी आरती: दुपारी १:३० वाजता"
     },
-
-
+    event4: {
+        date: "मंगळवार, १५ सप्टेंबर २०२६",
+        time: "सकाळच्या आरतीनंतर"
+    },
     event5: {
-        date: "दिनांक लवकरच जाहीर",
-        time: "वेळ लवकरच जाहीर करण्यात येईल"
+        date: "मंगळवार, १५ सप्टेंबर २०२६",
+        time: "दुपारी २:०० वाजल्यापासून"
     }
-
 };
-
 
 // Put the information onto the page
 
@@ -153,8 +456,6 @@ document.getElementById("eventDate5").textContent =
 
 document.getElementById("eventTime5").textContent =
     eventDetails.event5.time;
-
-
     // =========================
 // SHARE INVITATION
 // =========================
@@ -345,12 +646,12 @@ mainInvitation?.addEventListener("touchend", (event) => {
     }
 
     /* SWIPE LEFT → PREVIOUS PAGE */
-    if (distanceX < -60) {
+    if (distanceX > -60) {
         goToPage(currentPage - 1);
     }
 
     /* SWIPE RIGHT → NEXT PAGE */
-    if (distanceX > 60) {
+    if (distanceX < 60) {
         goToPage(currentPage + 1);
     }
 
