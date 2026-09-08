@@ -85,24 +85,6 @@ const englishTranslations = {
     event5Time: "2:00 PM onwards"
 },
 
-    attractions: {
-        shlok: "॥ गणपती बाप्पा मोरया ॥",
-        title: "Special Attractions",
-        subtitle: "Join us in the various programmes organized during Ganeshotsav.",
-
-        event1: "Cultural Programme",
-        event1Text: "Art, music, dance and various cultural performances.",
-
-        event2: "Competitions",
-        event2Text: "Fun and creative competitions for students.",
-
-        event3: "Entertainment",
-        event3Text: "Excitement, entertainment and a platform for students to showcase their talents.",
-
-        event4: "Ganeshotsav Moments",
-        event4Text: "Special memories and beautiful moments from our celebration."
-    },
-
     location: {
         shlok: "॥ मंगलमूर्ती मोरया ॥",
         title: "Ganeshotsav Venue",
@@ -220,50 +202,7 @@ document.querySelector("#eventDate5").textContent = englishTranslations.details.
 document.querySelector("#eventTime5").innerHTML = englishTranslations.details.event5Time;
 
 
-    // Special attractions page
-    document.querySelector(".college-events .section-shlok").textContent =
-        englishTranslations.attractions.shlok;
-
-    document.querySelector(".college-events h2").textContent =
-        englishTranslations.attractions.title;
-
-    document.querySelector(".college-events-heading > p:not(.section-shlok)").textContent =
-    englishTranslations.attractions.subtitle;
-
-
-    // Attraction cards
-    const attractionCards =
-        document.querySelectorAll(".college-events .showcase-card");
-
-    if (attractionCards.length >= 4) {
-
-        attractionCards[0].querySelector("h3").textContent =
-            englishTranslations.attractions.event1;
-
-        attractionCards[0].querySelector("p").textContent =
-            englishTranslations.attractions.event1Text;
-
-
-        attractionCards[1].querySelector("h3").textContent =
-            englishTranslations.attractions.event2;
-
-        attractionCards[1].querySelector("p").textContent =
-            englishTranslations.attractions.event2Text;
-
-
-        attractionCards[2].querySelector("h3").textContent =
-            englishTranslations.attractions.event3;
-
-        attractionCards[2].querySelector("p").textContent =
-            englishTranslations.attractions.event3Text;
-
-
-        attractionCards[3].querySelector("h3").textContent =
-            englishTranslations.attractions.event4;
-
-        attractionCards[3].querySelector("p").textContent =
-            englishTranslations.attractions.event4Text;
-    }
+    
 
 
     // Location + Footer
@@ -340,7 +279,7 @@ openButton.addEventListener("click", () => {
 // =========================
 
 const revealElements = document.querySelectorAll(
-    ".invitation, .details, .college-events, .location, .footer"
+    ".invitation, .details, .location, .footer"
 );
 
 const revealObserver = new IntersectionObserver(
