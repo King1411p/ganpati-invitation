@@ -73,7 +73,7 @@ const englishTranslations = {
     event1Time: "1:30 PM",
 
     event2Date: "Monday, 14 September 2026",
-    event2Time: "Morning Aarti: 10:00 AM – 11:30 AM<br>Evening Aarti: 7:00 PM",
+    event2Time: "Ganesh Murti Pranpratishthapana: 10:00 AM – 11:30 AM<br>Evening Aarti: 7:00 PM",
 
     event3Date: "Tuesday, 15 September 2026",
     event3Time: "Morning Aarti: 10:30 AM<br>Aarti before Visarjan: 1:30 PM",
@@ -351,12 +351,12 @@ const eventDetails = {
         time: "दुपारी १:३० वाजता"
     },
     event2: {
-        date: "सोमवार, १४ सप्टेंबर २०२६",
-        time: "सकाळची आरती: १०:०० – ११:३० सायंकाळची आरती: ७:०० वाजता"
-    },
+    date: "सोमवार, १४ सप्टेंबर २०२६",
+    time: "गणेश मूर्ती प्राणप्रतिष्ठापना व पूजा: १०:०० – ११:३०<br>सायंकाळची आरती: ७:०० वाजता"
+},
     event3: {
         date: "मंगळवार, १५ सप्टेंबर २०२६",
-        time: "सकाळची आरती: १०:३० वाजता विसर्जनापूर्वी आरती: दुपारी १:३० वाजता"
+        time: "सकाळची आरती: १०:३० वाजता<br> विसर्जनापूर्वी आरती: दुपारी १:३० वाजता"
     },
     event4: {
         date: "मंगळवार, १५ सप्टेंबर २०२६",
@@ -380,14 +380,14 @@ document.getElementById("eventTime1").textContent =
 document.getElementById("eventDate2").textContent =
     eventDetails.event2.date;
 
-document.getElementById("eventTime2").textContent =
+document.getElementById("eventTime2").innerHTML =
     eventDetails.event2.time;
 
 
-document.getElementById("eventDate3").textContent =
+document.getElementById("eventDate3").textContent=
     eventDetails.event3.date;
 
-document.getElementById("eventTime3").textContent =
+document.getElementById("eventTime3").innerHTML =
     eventDetails.event3.time;
 
 document.getElementById("eventDate5").textContent =
