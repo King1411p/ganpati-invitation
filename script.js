@@ -91,6 +91,7 @@ const englishTranslations = {
         subtitle: "We warmly welcome you all.",
 
         college: "Tilak Maharashtra Vidyapeeth",
+        address: "Plot No. 3, Sector 14,<br>Near Raghunath Vihar,<br>Kharghar, Navi Mumbai",
         mapsButton: "📍 View Location on Google Maps",
 
         footerMantra: "॥ ॐ गं गणपतये नमः ॥",
@@ -238,6 +239,12 @@ document.querySelector("#eventTime5").innerHTML = englishTranslations.details.ev
 
     document.querySelector(".footer-decoration:last-child").textContent =
         englishTranslations.location.footerBottom;
+
+        document.querySelector(".location-card h3").textContent =
+    englishTranslations.location.college;
+
+document.querySelector(".location-address").innerHTML =
+    englishTranslations.location.address;
 }
 
 
