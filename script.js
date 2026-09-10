@@ -73,13 +73,13 @@ const englishTranslations = {
     event1Time: "1:30 PM",
 
     event2Date: "Monday, 14 September 2026",
-    event2Time: "Ganesh Murti Pranpratishthapana: 10:00 AM – 11:30 AM<br>Evening Aarti: 7:00 PM",
+    event2Time: "Ganpati Pranpratishthapana & Pooja: 10:00 AM – 11:30 AM<br>Evening Aarti: 7:00 PM",
 
     event3Date: "Tuesday, 15 September 2026",
-    event3Time: "Morning Aarti: 10:30 AM<br>Aarti before Visarjan: 1:30 PM",
+    event3Time: "Morning Aarti: 8:00 AM<br>Aarti before Visarjan: 12:00 PM",
 
     event4Date: "Tuesday, 15 September 2026",
-    event4Time: "After Morning Aarti",
+    event4Time: "11:00 AM – 12:00 PM",
 
     event5Date: "Tuesday, 15 September 2026",
     event5Time: "2:00 PM onwards"
@@ -352,15 +352,15 @@ const eventDetails = {
     },
     event2: {
     date: "सोमवार, १४ सप्टेंबर २०२६",
-    time: "गणेश मूर्ती प्राणप्रतिष्ठापना व पूजा: १०:०० – ११:३०<br>सायंकाळची आरती: ७:०० वाजता"
-},
+    time: "गणेश मूर्ती प्राणप्रतिष्ठापना व पूजा: सकाळी १०:०० – ११:३०<br>सायंकाळची आरती: ७:०० वाजता"
+    },
     event3: {
         date: "मंगळवार, १५ सप्टेंबर २०२६",
-        time: "सकाळची आरती: १०:३० वाजता<br> विसर्जनापूर्वी आरती: दुपारी १:३० वाजता"
+        time: "सकाळची आरती: ८:०० वाजता<br>विसर्जनापूर्वी आरती: दुपारी १२:०० वाजता"
     },
     event4: {
         date: "मंगळवार, १५ सप्टेंबर २०२६",
-        time: "सकाळच्या आरतीनंतर"
+        time: "सकाळी ११:०० – १२:००"
     },
     event5: {
         date: "मंगळवार, १५ सप्टेंबर २०२६",
@@ -373,7 +373,7 @@ const eventDetails = {
 document.getElementById("eventDate1").textContent =
     eventDetails.event1.date;
 
-document.getElementById("eventTime1").textContent =
+document.getElementById("eventTime1").innerHTML =
     eventDetails.event1.time;
 
 
@@ -390,10 +390,16 @@ document.getElementById("eventDate3").textContent=
 document.getElementById("eventTime3").innerHTML =
     eventDetails.event3.time;
 
+document.getElementById("eventDate4").textContent=
+    eventDetails.event4.date;
+
+document.getElementById("eventTime4").innerHTML =
+    eventDetails.event4.time;
+
 document.getElementById("eventDate5").textContent =
     eventDetails.event5.date;
 
-document.getElementById("eventTime5").textContent =
+document.getElementById("eventTime5").innerHTML =
     eventDetails.event5.time;
     // =========================
 // SHARE INVITATION
